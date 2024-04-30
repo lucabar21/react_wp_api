@@ -1,9 +1,114 @@
+body {
+  min-height: 100vh;
+}
+#nav-bar {
+  background-color: #68136b !important;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
 #footer {
-  background-color: #f8f9fa;
+  background-color: #68136b;
   padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
 }
 
 #footer p {
   margin: unset;
-  color: rgb(128, 128, 128);
+  color: rgb(255, 255, 255);
+}
+.cards {
+  cursor: pointer;
+}
+.card-bd {
+  width: 100%;
+  min-height: 450px;
+}
+
+#card-img {
+  width: 100%;
+  height: 260px;
+}
+#card-img > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#hero {
+  width: 100%;
+}
+
+#btn {
+  background-color: #68136b;
+}
+
+@keyframes navlink {
+  from {
+    transform: scale(1);
+    font-weight: 400;
+  }
+  to {
+    font-weight: 700;
+    transform: scale(1.02);
+  }
+}
+.nav-link:hover {
+  animation-name: navlink;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+#hero-sec {
+  position: relative;
+}
+#btn-grp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#btn-grp > a {
+  text-decoration: none;
+}
+
+#hero-btn {
+  padding: 1.5rem 3rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #68136b;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#hero-btn:hover {
+  background-color: #68136b;
+  color: #ffffff;
+  transition: 0.3s;
+  opacity: 0.9;
+}
+
+#contact-div,
+#blog-div {
+  margin-bottom: 5rem;
+}
+
+#main-div {
+  margin-top: 7rem;
+}
+
+.pagination li {
+  cursor: pointer;
+}
+
+.active > span {
+  background-color: #68136b !important;
 }

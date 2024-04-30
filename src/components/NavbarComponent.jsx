@@ -4,18 +4,26 @@ import Navbar from "react-bootstrap/Navbar";
 
 function NavbarComponent() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary mb-4">
+    <Navbar id="nav-bar" expand="lg" className="bg-body-tertiary mb-4">
       <Container fluid>
         <Navbar.Brand href="/">
-          <strong>TechPulse</strong>
+          <strong style={{ color: "white" }}>TechPulse</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="about">About</Nav.Link>
-            <Nav.Link href="contact">Contact</Nav.Link>
-            <Nav.Link href="blog">Blog</Nav.Link>
+          <Nav className="ms-3 gap-3">
+            <Nav.Link className="nav-link" style={{ color: "white" }} href="/">
+              Home
+            </Nav.Link>
+            <Nav.Link className="nav-link" style={{ color: "white" }} href="about">
+              About
+            </Nav.Link>
+            <Nav.Link className="nav-link" style={{ color: "white" }} href="contact">
+              Contatti
+            </Nav.Link>
+            <Nav.Link className="nav-link" style={{ color: "white" }} href="blog">
+              Blog
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -7,6 +7,8 @@ import FooterComponent from "./components/FooterComponent";
 import AboutComponent from "./components/AboutComponent";
 import ContactsComponent from "./components/ContactsComponent";
 import BlogComponent from "./components/BlogComponent";
+import PostDetailsComponent from "./components/PostDetailsComponent";
+import NewPostComponent from "./components/NewPostComponent";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/about" element={<AboutComponent />}></Route>
           <Route path="/contact" element={<ContactsComponent />}></Route>
           <Route path="/blog" element={<BlogComponent />}></Route>
+          <Route path="/posts/:id" element={<PostDetailsComponent />} />
+          <Route path="/create-post" element={<NewPostComponent />} />
         </Routes>
         <FooterComponent />
       </BrowserRouter>

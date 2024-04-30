@@ -1,13 +1,14 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Image } from "react-bootstrap";
 
 const AboutComponent = () => {
   return (
     <Container>
       <Row>
         <Col>
-          <h4 className="text-center">About us</h4>
+          <Image className="mb-4" src="about us.PNG" thumbnail />
           <p>
             Benvenuti a <strong>TechPulse</strong>, il punto di riferimento definitivo per gli appassionati di
             tecnologia alla ricerca delle ultime novità, recensioni approfondite e guide pratiche. <br />

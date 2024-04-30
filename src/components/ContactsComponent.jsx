@@ -3,36 +3,92 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Image from "react-bootstrap/Image";
+import React, { useState } from "react";
 
 function ContactsComponent() {
+  const [showAlert, setShowAlert] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
+    setFormData({
+      name: "",
+      surname: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   return (
-    <Container>
-      <Row className="justify-content-center">
+    <Container id="contact-div">
+      <Row className="justify-content-center mb-4">
         <Col>
-          <h4 className="text-center">Chiedici qualcosa</h4>
+          <Image src="contact_us.PNG" thumbnail />
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col xs={6}>
+          {showAlert && (
+            <div className="alert alert-success" role="alert">
+              Invio confermato!
+            </div>
+          )}
           <Form>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Nome</Form.Label>
-              <Form.Control type="text" placeholder="Mario" />
+              <Form.Control type="text" value={formData.name} placeholder="Mario" name="name" onChange={handleChange} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Cognome</Form.Label>
-              <Form.Control type="text" placeholder="Rossi" />
+              <Form.Control
+                type="text"
+                value={formData.surname}
+                placeholder="Rossi"
+                name="surname"
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Indirizzo email</Form.Label>
-              <Form.Control type="email" placeholder="esempio@email.it" />
+              <Form.Control
+                type="email"
+                value={formData.email}
+                placeholder="esempio@email.it"
+                name="email"
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Messaggio</Form.Label>
-              <Form.Control as="textarea" row={5} placeholder="Il tuo messaggio qui..." />
+              <Form.Control
+                as="textarea"
+                row={5}
+                value={formData.message}
+                placeholder="Il tuo messaggio qui..."
+                name="message"
+                onChange={handleChange}
+              />
             </Form.Group>
             <div className="d-flex justify-content-center">
-              <Button variant="secondary" type="submit">
+              <Button onClick={handleSubmit} id="btn" variant="secondary" type="submit">
                 Invia
               </Button>
             </div>
