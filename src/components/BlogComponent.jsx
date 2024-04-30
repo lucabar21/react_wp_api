@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { Image } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 
 const BlogComponent = () => {
   const [posts, setPosts] = useState([]);
@@ -71,7 +72,7 @@ const BlogComponent = () => {
         </Col>
       </Row>
       <Row className="row-gap-3 mt-4">
-        {posts &&
+        {posts ? (
           posts.map((post) => (
             <Col className="cards" xs={6} key={post.id}>
               <Card className="card-bd">
@@ -102,7 +103,10 @@ const BlogComponent = () => {
                 </Card.Body>
               </Card>
             </Col>
-          ))}
+          ))
+        ) : (
+          <Spinner animation="border" variant="dark" />
+        )}
       </Row>
       <nav className="d-flex justify-content-center mt-4">
         <ul className="pagination">

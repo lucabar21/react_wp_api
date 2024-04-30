@@ -85,7 +85,7 @@ const NewPostComponent = () => {
   };
 
   return (
-    <Container>
+    <Container id="newpost-div">
       <Row className="justify-content-center mb-4">
         <Col>
           <Image src="newpost.PNG" thumbnail />
